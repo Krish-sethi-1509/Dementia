@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Dementia</title>
+  <style>
+    /* Global Reset & Dark Theme */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: #1a1e23;
+      color: #e0e0e0;
+      line-height: 1.7;
+    }
+    
+    /* Scroll bar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-thumb { background-color: #006064; border-radius: 10px; }
+    ::-webkit-scrollbar-track { background: #004d40; }
+
+    /* Header */
+    header {
+      background: linear-gradient(90deg, #004d40, #00796b);
+      color: #e0e0e0;
+      text-align: center;
+      padding: 2rem 10px 1.5rem 10px;
+      box-shadow: 0 0 15px #00bcd47d inset;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 7px;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #a7d9db;
+      opacity: 0.9;
+    }
+
+    /* Navigation */
+    nav {
+      background: #212121;
+      padding: 16px 0;
+      text-align: center;
+      border-bottom: 1.5px solid #333;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: #e0e0e0;
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 7px 10px;
+      border-radius: 7px;
+      transition: background 0.25s, color 0.25s;
+      outline: none;
+    }
+
+    nav a:focus,
+    nav a:hover {
+      background: #333;
+      color: #00bcd4;
+    }
+
+    /* Hero Banner */
+    .hero {
+      padding: 40px 25px;
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      max-width: 900px;
+      margin: 35px auto 0 auto;
+      text-align: center;
+      background-color: #2c323a;
+      border: 1px solid #4a515c;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      color: #00bcd4;
+      margin-bottom: 13px;
+      font-weight: 500;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 650px;
+      margin: 0 auto;
+      color: #b0b0b0;
+    }
+
+    /* Card Section */
+    .sections {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 50px 0 30px 0;
+      gap: 24px;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: #2c323a;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      padding: 25px;
+      width: 295px;
+      text-align: center;
+      transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+      border: 1.5px solid #4a515c;
+    }
+
+    .card h3 {
+      color: #00bcd4;
+      margin-bottom: 11px;
+      font-size: 1.26rem;
+      font-weight: 500;
+    }
+    
+    .card p {
+      color: #b0b0b0;
+    }
+
+    .card:hover,
+    .card:focus-within {
+      transform: translateY(-7px);
+      box-shadow: 0 8px 20px rgba(0, 188, 212, 0.2);
+      border-color: #00bcd4;
+    }
+
+    /* Main Content Section */
+    .content {
+      max-width: 950px;
+      margin: 38px auto;
+      padding: 25px 40px;
+      background: #2c323a;
+      border-radius: 1rem;
+      border: 1px solid #4a515c;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .content h2 {
+      color: #00bcd4;
+      margin-top: 36px;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+      border-bottom: 1px solid #4a515c;
+      padding-bottom: 10px;
+      font-weight: 500;
+    }
+    
+    .content p, .content li {
+        color: #b0b0b0;
+    }
+
+    .content ul {
+      margin: 12px 0 22px 25px;
+    }
+    .content li {
+      margin-bottom: 8px;
+    }
+
+    /* Timeline */
+    .timeline {
+      margin: 24px 0 32px 5px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .timeline-step {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 12px;
+    }
+    .timeline-step:before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 9px;
+      width: 12px;
+      height: 12px;
+      background: #00bcd4;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #00bcd4aa;
+    }
+    .timeline-step:after {
+      content: '';
+      position: absolute;
+      left: 12px;
+      top: 24px;
+      width: 2px;
+      height: calc(100% - 10px);
+      background: #00796b;
+    }
+    .timeline-step:last-child:after {
+      display: none;
+    }
+
+    /* CTA Box */
+    .cta-box {
+      margin: 40px auto;
+      padding: 26px 20px;
+      background: linear-gradient(90deg, #00796b, #004d40);
+      color: #fff;
+      border-radius: 16px;
+      text-align: center;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      max-width: 700px;
+    }
+    .cta-btn {
+      margin-top: 16px;
+      padding: 12px 28px;
+      background: #00bcd4;
+      color: #111;
+      border: none;
+      border-radius: 7px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s, box-shadow 0.2s;
+    }
+    .cta-btn:hover {
+      background-color: #0097a7;
+      box-shadow: 0 0 10px #00bcd488;
+    }
+
+    /* FAQ Accordion */
+    .faq-section {
+      margin: 38px 0 25px 0;
+    }
+    .faq-section h2 {
+      text-align: center;
+      border-bottom: none;
+    }
+    details {
+      background: #1f2328;
+      border-radius: 9px;
+      padding: 15px 22px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      border: 1px solid #4a515c;
+      transition: background 0.2s;
+    }
+    details[open] {
+      background: #2c323a;
+      border-left: 5px solid #00bcd4;
+      padding-left: 18px;
+    }
+    summary {
+      font-weight: bold;
+      color: #00bcd4;
+      font-size: 1.1rem;
+      cursor: pointer;
+      outline: none;
+    }
+    details p {
+      font-size: 1rem;
+      color: #b0b0b0;
+      margin: 12px 0 0 0;
+      border-top: 1px solid #4a515c;
+      padding-top: 12px;
+    }
+
+    /* Footer */
+    footer {
+      background: #212121;
+      color: #aaa;
+      text-align: center;
+      padding: 22px 0;
+      margin-top: 45px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 750px) {
+      .sections {
+        flex-direction: column;
+        gap: 18px;
+        align-items: center;
+      }
+      .content, .hero {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 25px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      header h1 { font-size: 1.8rem; }
+      .hero h2 { font-size: 1.5rem; }
+      nav { padding: 10px 0; }
+      nav a { margin: 0 7px; font-size: 0.94rem; }
+      .card { width: 95%; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>About Dementia</h1>
+  <p>Understanding cognitive health and supporting those affected</p>
+</header>
+
+<nav>
+  <a href="Home page.html">Home</a>
+  <a href="About Dementia.html">About Dementia</a>
+  <a href="Self check tool.html">Self-Check Tool</a>
+  <a href="resources.html">Resources</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<section class="hero">
+  <h2>Your Guide to Dementia Awareness</h2>
+  <p>
+    Learn about dementia, its symptoms and causes, and discover how lifestyle changes and awareness can make a real difference. Early detection and compassionate support empower families and individuals.
+  </p>
+</section>
+
+<div class="sections">
+  <div class="card">
+    <h3>What is Dementia?</h3>
+    <p>
+      A progressive decline in mental function that interferes with daily life—it's caused by changes in the brain, not a normal part of aging.
+    </p>
+  </div>
+  <div class="card">
+    <h3>Early Self-Check</h3>
+    <p>
+      Use our tool to recognize early warning signs and know when to seek medical advice.
+    </p>
+  </div>
+  <div class="card">
+    <h3>Resources & Care</h3>
+    <p>
+      Find expert providers, care centers, and support groups for affected individuals and families.
+    </p>
+  </div>
+</div>
+
+<div class="content">
+  <h2>What is Dementia?</h2>
+  <p>
+    Dementia describes a group of conditions characterized by significant impairment of at least two brain functions, typically including memory loss, impaired language, judgment, and reasoning skills. The changes are usually progressive and irreversible, impacting independence and quality of life.
+  </p>
+  <p>
+    <strong>Alzheimer’s disease</strong> is the most common cause, but dementia can arise from vascular problems, mixed causes, or rarer brain disorders.
+  </p>
+
+  <h2>Symptoms & Early Signs</h2>
+  <ul>
+    <li>Losing short-term memory, repeating questions or stories</li>
+    <li>Misplacing objects, getting lost in familiar places</li>
+    <li>Difficulty planning, problem-solving, or making decisions</li>
+    <li>Struggling to speak, write, or follow conversations</li>
+    <li>Changes in mood, behavior, or personality</li>
+    <li>Confusion about time, events, or surroundings</li>
+  </ul>
+
+  <h2>Main Types & Causes</h2>
+  <ul>
+    <li><strong>Alzheimer’s Disease:</strong> Marked by amyloid plaques & tau tangles disrupting brain communication.</li>
+    <li><strong>Vascular Dementia:</strong> Blocked or reduced blood flow from stroke or vessel disease.</li>
+    <li><strong>Lewy Body Dementia:</strong> Deposits of abnormal proteins causing fluctuating awareness, hallucinations, and movement symptoms.</li>
+    <li><strong>Frontotemporal Dementia (FTD):</strong> Damage to frontal and temporal lobes affecting personality and language.</li>
+  </ul>
+  
+  <div class="cta-box">
+    Think you or a loved one may have memory problems?
+    <a href="Self check tool.html"><button class="cta-btn">Try the Self-Check Tool</button></a>
+  </div>
+
+  <h2>Diagnosis & Living Well</h2>
+  <div class="timeline">
+    <div class="timeline-step"><strong>Seek Assessment:</strong> Medical exam, memory/cognitive tests, possibly brain scans.</div>
+    <div class="timeline-step"><strong>Early Intervention:</strong> Address treatable causes and manage symptoms.</div>
+    <div class="timeline-step"><strong>Support Plans:</strong> Cognitive training, physical/social activity, and care planning.</div>
+    <div class="timeline-step"><strong>Community:</strong> Access support groups, counseling, and care services to improve quality of life.</div>
+  </div>
+
+  <h2>Frequently Asked Questions</h2>
+  <section class="faq-section">
+    <details>
+      <summary>Is dementia a normal part of aging?</summary>
+      <p>No. While minor memory lapses can happen with age, dementia is caused by brain disease, not normal aging.</p>
+    </details>
+    <details>
+      <summary>Can dementia be reversed?</summary>
+      <p>Most types are irreversible, but some conditions with similar symptoms (like vitamin deficiencies or thyroid disorders) can be treated.</p>
+    </details>
+    <details>
+      <summary>What's the difference between Dementia & Alzheimer’s?</summary>
+      <p>Dementia is an umbrella term for symptoms. Alzheimer’s is a specific disease, and the most common cause of dementia.</p>
+    </details>
+  </section>
+</div>
+
+<footer>
+  <p>&copy; 2025 Dementia Detection Project &middot; <span>For informational purposes only.</span></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dementia Support & Resources</title>
+  <style>
+    /* Global Reset & Dark Theme */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: #1a1e23;
+      color: #e0e0e0;
+      line-height: 1.7;
+    }
+    
+    /* Scroll bar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-thumb { background-color: #006064; border-radius: 10px; }
+    ::-webkit-scrollbar-track { background: #004d40; }
+
+    /* Header */
+    header {
+      background: linear-gradient(90deg, #004d40, #00796b);
+      color: #e0e0e0;
+      text-align: center;
+      padding: 2rem 10px 1.5rem 10px;
+      box-shadow: 0 0 15px #00bcd47d inset;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 7px;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #a7d9db;
+      opacity: 0.9;
+    }
+
+    /* Navigation */
+    nav {
+      background: #212121;
+      padding: 16px 0;
+      text-align: center;
+      border-bottom: 1.5px solid #333;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: #e0e0e0;
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 7px 10px;
+      border-radius: 7px;
+      transition: background 0.25s, color 0.25s;
+      outline: none;
+    }
+
+    nav a:focus,
+    nav a:hover {
+      background: #333;
+      color: #00bcd4;
+    }
+
+    /* Hero Banner */
+    .hero {
+      padding: 40px 25px;
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      max-width: 900px;
+      margin: 35px auto 0 auto;
+      text-align: center;
+      background-color: #2c323a;
+      border: 1px solid #4a515c;
+    }
+
+    .hero h2 {
+      font-size: 2.2rem;
+      color: #00bcd4;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 650px;
+      margin: 0 auto;
+      color: #b0b0b0;
+    }
+    
+    /* Card Section */
+    .sections {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 50px 0 30px 0;
+      gap: 24px;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: #2c323a;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      padding: 25px;
+      width: 295px;
+      text-align: center;
+      transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+      border: 1.5px solid #4a515c;
+    }
+
+    .card h3 {
+      color: #00bcd4;
+      margin-bottom: 11px;
+      font-size: 1.26rem;
+      font-weight: 500;
+    }
+    
+    .card p {
+      color: #b0b0b0;
+    }
+
+    .card:hover,
+    .card:focus-within {
+      transform: translateY(-7px);
+      box-shadow: 0 8px 20px rgba(0, 188, 212, 0.2);
+      border-color: #00bcd4;
+    }
+    
+    /* Main Content Section */
+    .content {
+      max-width: 950px;
+      margin: 38px auto;
+      padding: 25px 40px;
+      background: #2c323a;
+      border-radius: 1rem;
+      border: 1px solid #4a515c;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .content h2 {
+      color: #00bcd4;
+      margin-top: 36px;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+      border-bottom: 1px solid #4a515c;
+      padding-bottom: 10px;
+      font-weight: 500;
+    }
+    
+    .content p, .content li {
+        color: #b0b0b0;
+    }
+
+    .content ul {
+      margin: 12px 0 22px 25px;
+    }
+    .content li {
+      margin-bottom: 8px;
+    }
+
+    /* FAQ Accordion */
+    .faq-section {
+      margin: 38px 0 25px 0;
+    }
+    .faq-section h2 {
+      text-align: center;
+      border-bottom: none;
+    }
+    details {
+      background: #1f2328;
+      border-radius: 9px;
+      padding: 15px 22px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      border: 1px solid #4a515c;
+      transition: background 0.2s;
+    }
+    details[open] {
+      background: #2c323a;
+      border-left: 5px solid #00bcd4;
+      padding-left: 18px;
+    }
+    summary {
+      font-weight: bold;
+      color: #00bcd4;
+      font-size: 1.1rem;
+      cursor: pointer;
+      outline: none;
+    }
+    details p {
+      font-size: 1rem;
+      color: #b0b0b0;
+      margin: 12px 0 0 0;
+      border-top: 1px solid #4a515c;
+      padding-top: 12px;
+    }
+
+    /* Footer */
+    footer {
+      background: #212121;
+      color: #aaa;
+      text-align: center;
+      padding: 22px 0;
+      margin-top: 45px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 750px) {
+      .sections {
+        flex-direction: column;
+        gap: 18px;
+        align-items: center;
+      }
+      .content, .hero {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 25px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      header h1 { font-size: 1.8rem; }
+      .hero h2 { font-size: 1.5rem; }
+      nav { padding: 10px 0; }
+      nav a { margin: 0 7px; font-size: 0.94rem; }
+      .card { width: 95%; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Dementia Resources</h1>
+  <p>Find the support, care, and information you need.</p>
+</header>
+
+<nav>
+  <a href="Home page.html">Home</a>
+  <a href="About Dementia.html">About Dementia</a>
+  <a href="Self check tool.html">Self-Check Tool</a>
+  <a href="resources.html">Resources</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<section class="hero">
+  <h2>You Are Not Alone</h2>
+  <p>
+    Navigating the journey of dementia can be challenging. This resource hub is designed to connect you with professional help, community support, and valuable information for both individuals and caregivers.
+  </p>
+</section>
+
+<div class="sections">
+  <div class="card">
+    <h3>Medical Professionals</h3>
+    <p>
+      Learn about the roles of neurologists, geriatricians, and neuropsychologists in diagnosis and care planning.
+    </p>
+  </div>
+  <div class="card">
+    <h3>Support Groups</h3>
+    <p>
+      Connect with others who understand. Find local and online groups for people with dementia and their caregivers.
+    </p>
+  </div>
+  <div class="card">
+    <h3>Caregiver Corner</h3>
+    <p>
+      Access essential resources on respite care, stress management, and financial planning for caregivers.
+    </p>
+  </div>
+</div>
+
+<div class="content">
+  <h2>Finding Professional Help</h2>
+  <p>
+    The first step in managing dementia is securing an accurate diagnosis from a qualified medical professional. This often involves a team of specialists.
+  </p>
+  <ul>
+    <li><strong>Primary Care Physician (PCP):</strong> Your starting point for initial cognitive screening and referrals.</li>
+    <li><strong>Neurologist:</strong> A specialist in brain disorders who can diagnose specific types of dementia.</li>
+    <li><strong>Geriatrician:</strong> A doctor specializing in the health and diseases of older adults.</li>
+    <li><strong>Neuropsychologist:</strong> Conducts detailed tests on memory and thinking skills to assess cognitive function.</li>
+  </ul>
+
+  <h2>Community & Support</h2>
+  <p>
+    Connecting with others provides emotional support and practical advice. Support groups are invaluable for sharing experiences and reducing feelings of isolation.
+  </p>
+    <ul>
+    <li><strong>For Individuals with Dementia:</strong> Groups focused on living well with cognitive change, sharing coping strategies, and engaging in social activities.</li>
+    <li><strong>For Caregivers:</strong> A safe space to discuss challenges, learn from others, and find emotional support.</li>
+    <li><strong>Online Forums:</strong> 24/7 access to a global community for advice and encouragement.</li>
+  </ul>
+  
+  <h2>Educational Materials</h2>
+   <p>
+    Staying informed is key. We recommend exploring trusted sources for the latest information on dementia research, treatment, and care strategies.
+  </p>
+   <ul>
+    <li><strong>National Health Organizations:</strong> Websites like the Alzheimer's Association and the National Institute on Aging offer reliable information.</li>
+    <li><strong><a href="About Dementia.html" style="color: #00bcd4;">Our Guide to Dementia:</a></strong> Revisit our detailed guide to learn more about types, symptoms, and risk factors.</li>
+    <li><strong>Workshops & Webinars:</strong> Many non-profits host free online events about caregiving and living with dementia.</li>
+  </ul>
+
+  <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+    <details>
+      <summary>Where should I start if I suspect a loved one has dementia?</summary>
+      <p>The best first step is to schedule an appointment with their primary care physician. The doctor can conduct an initial assessment and refer you to a specialist, like a neurologist, for more comprehensive testing.</p>
+    </details>
+    <details>
+      <summary>How do I find a reputable support group?</summary>
+      <p>Local hospitals, national organizations (like the Alzheimer's Association), and your doctor's office are excellent sources for recommendations on trusted local and online support groups.</p>
+    </details>
+    <details>
+      <summary>Are there financial assistance programs available for care?</summary>
+      <p>Yes, various government and non-profit programs can help with the cost of care. Research options like Medicare, Medicaid, and programs through the Department of Veterans Affairs if applicable. Social workers can be a great resource for navigating these systems.</p>
+    </details>
+  </section>
+</div>
+
+<footer>
+  <p>&copy; 2025 Dementia Detection Project &middot; <span>For informational purposes only.</span></p>
+</footer>
+
+</body>
+</html>

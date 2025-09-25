@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us</title>
+  <style>
+    /* Global Reset & Dark Theme */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: #1a1e23;
+      color: #e0e0e0;
+      line-height: 1.7;
+    }
+    
+    /* Scroll bar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-thumb { background-color: #006064; border-radius: 10px; }
+    ::-webkit-scrollbar-track { background: #004d40; }
+
+    /* Header */
+    header {
+      background: linear-gradient(90deg, #004d40, #00796b);
+      color: #e0e0e0;
+      text-align: center;
+      padding: 2rem 10px 1.5rem 10px;
+      box-shadow: 0 0 15px #00bcd47d inset;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 7px;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #a7d9db;
+      opacity: 0.9;
+    }
+
+    /* Navigation */
+    nav {
+      background: #212121;
+      padding: 16px 0;
+      text-align: center;
+      border-bottom: 1.5px solid #333;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: #e0e0e0;
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 7px 10px;
+      border-radius: 7px;
+      transition: background 0.25s, color 0.25s;
+      outline: none;
+    }
+
+    nav a:focus,
+    nav a:hover {
+      background: #333;
+      color: #00bcd4;
+    }
+    
+    /* Main Content Section */
+    .content {
+      max-width: 950px;
+      margin: 38px auto;
+      padding: 40px;
+      background: #2c323a;
+      border-radius: 1rem;
+      border: 1px solid #4a515c;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .content h2 {
+      color: #00bcd4;
+      margin-bottom: 10px;
+      font-size: 1.8rem;
+      text-align: center;
+      font-weight: 500;
+    }
+    
+    .content .intro-text {
+        text-align: center;
+        color: #b0b0b0;
+        margin-bottom: 40px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Contact Layout */
+    .contact-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .contact-form {
+        flex: 2;
+        min-width: 300px;
+    }
+    
+    .contact-info {
+        flex: 1;
+        min-width: 250px;
+        background-color: #1f2328;
+        padding: 25px;
+        border-radius: 12px;
+        border: 1px solid #4a515c;
+    }
+
+    .contact-info h3 {
+        color: #00bcd4;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #4a515c;
+        padding-bottom: 10px;
+    }
+
+    .contact-info p {
+        margin-bottom: 20px;
+        color: #b0b0b0;
+    }
+
+    .contact-info strong {
+        color: #e0e0e0;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    /* Form Styles */
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: #00bcd4;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      background-color: #1a1e23;
+      border: 1px solid #4a515c;
+      color: #e0e0e0;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    
+    .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    .submit-btn {
+      padding: 12px 28px;
+      background: #00bcd4;
+      color: #111;
+      border: none;
+      border-radius: 7px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s, box-shadow 0.2s;
+    }
+    .submit-btn:hover {
+      background-color: #0097a7;
+      box-shadow: 0 0 10px #00bcd488;
+    }
+
+
+    /* Footer */
+    footer {
+      background: #212121;
+      color: #aaa;
+      text-align: center;
+      padding: 22px 0;
+      margin-top: 45px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 750px) {
+      .content {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 25px;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Contact Us</h1>
+  <p>We're here to help. Reach out with your questions or feedback.</p>
+</header>
+
+<nav>
+  <a href="Home page.html">Home</a>
+  <a href="About Dementia.html">About Dementia</a>
+  <a href="Self check tool.html">Self-Check Tool</a>
+  <a href="resources.html">Resources</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<div class="content">
+    <h2>Get In Touch</h2>
+    <p class="intro-text">
+        Whether you have a question about dementia, need help finding a resource, or want to provide feedback on our tools, we'd love to hear from you.
+    </p>
+
+    <div class="contact-wrapper">
+        <div class="contact-form">
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required placeholder="Question about resources">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+             <p style="font-size: 0.8rem; color: #777; margin-top: 15px;">* Please note: This is a demo form and does not send emails.</p>
+        </div>
+
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p>
+                <strong>Email:</strong>
+                contact@dementiaproject.demo
+            </p>
+            <p>
+                <strong>Phone:</strong>
+                +1 (555) 123-4567
+            </p>
+            <p>
+                <strong>Address:</strong><br>
+                123 Health Ave,<br>
+                Cognition City, 12345
+            </p>
+            <p style="font-size: 0.9rem; color: #a7d9db;">
+                For medical emergencies, please call your local emergency number. This service is for informational purposes only.
+            </p>
+        </div>
+    </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 Dementia Detection Project &middot; <span>For informational purposes only.</span></p>
+</footer>
+
+</body>
+</html>
